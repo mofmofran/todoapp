@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.example.todoapp.HelloController" spacing="8">
+<padding>
+        <Insets bottom="12" left="12" right="12" top="12" />
+    </padding>
+
+<!--入力欄と追加ボタン-->
+
+<HBox spacing="8">
+    <TextField fx:id="inputField" promptText="やることを入力" HBox.hgrow="ALWAYS" onAction="#onAdd"/>
+    <Button text="追加" onAction="#onAdd"/>
+    </HBox>
+
+    <!--一覧-->
+    <ListView fx:id="todoList" VBox.vgrow="ALWAYS"/>
+
+    <!--下のボタンと件数-->
+    <HBox spacing="8">
+        <Button text="選択を削除" onAction="#onDelete"/>
+        <Button text="完了を片付ける" onAction="#onClearDone"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Label fx:id="countLabel"/>
+    </HBox>
+    </VBox>
